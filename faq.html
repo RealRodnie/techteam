@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>TechTeam</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+	
+	<style>
+
+	body { background-image: url('images/blue.jpg'); }
+
+	.accordion {
+	  max-width: 50%;
+	  margin:0 25%;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	  border-radius: 5px;
+	  overflow: hidden;
+	  font-family: "Quicksand", sans-serif;
+	  background: #2e5cb8;
+	  justify-content: center;
+	}
+
+	.accordion__label,
+	.accordion__content {
+	  padding: 14px 20px;
+	}
+
+	.accordion__label {
+	  display: block;
+	  color: #ffffff;
+	  font-size: 20px;
+	  font-weight: 500;
+	  cursor: pointer;
+	  position: relative;
+	  transition: background 0.1s;
+	}
+
+	.accordion__label:hover {
+	  background: rgba(0, 0, 0, 0.1);
+	}
+
+	.accordion__label::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  right: 20px;
+	  width: 12px;
+	  height: 6px;
+	  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+	  background-size: contain;
+	  transition: transform 0.4s;
+	}
+
+	.accordion__content {
+	  background: #c2d1f0;
+	  line-height: 1.6;
+	  font-size: 20px;
+	  display: none;
+	}
+
+	.accordion__input {
+	  display: none;
+	}
+
+	.accordion__input:checked ~ .accordion__content {
+	  display: block;
+	}
+
+	.accordion__input:checked ~ .accordion__label::after {
+	  transform: translateY(-50%) rotate(0.5turn);
+	}
+	
+	.order1{
+	font-size: 75px;
+	text-align: center;
+	margin-top: 10%;
+	padding-bottom: 50px;
+	color: #FFF;
+	text-shadow: 2px 2px 5px black;
+}
+
+	.faq{
+	font-size: 50px;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: #FFF;
+	text-shadow: 2px 2px 5px black;
+	}
+/* NAVBAR STYLING STARTS */
+.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            float: left;
+			margin-top: -10%;
+
+        }
+
+        .nav-links a {
+        color: #fff;
+        text-decoration: none;
+
+        }
+
+        /* LOGO */
+        .logo {
+        font-size: 32px;
+        }
+
+        /* NAVBAR MENU */
+        .menu {
+            display: flex;
+            color: #dcdcdc;
+            text-align: center;
+            padding: 20px 26px;
+            text-decoration: none;
+            font-size: 2em;
+            list-style-type: none;
+            float: left;
+        }
+
+        .menu li:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .menu li {
+        padding: 5px 44px;
+        }
+
+        /* DROPDOWN MENU */
+        .services {
+        position: relative; 
+        }
+
+        .dropdown {
+        padding: 1em 0;
+        position: absolute; /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+        }
+
+        .dropdown li + li {
+        margin-top: 10px;
+        }
+
+        .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+        }
+
+        .dropdown li:hover {
+        background-color: #4c9e9e;
+        }
+
+        .services:hover .dropdown {
+        display: block;
+        }
+
+        /* RESPONSIVE NAVBAR MENU STARTS */
+
+        /* CHECKBOX HACK */
+
+        input[type=checkbox] {
+        display: none;
+        } 
+
+        /* HAMBURGER MENU */
+        .hamburger {
+        display: none;
+        font-size: 3.5em;
+        user-select: none;
+        margin-left: 25%;
+        color: white;
+        }
+
+        /* APPLYING MEDIA QUERIES */
+        @media (max-width: 1350px) {
+        .menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            left: 0;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        .menu li:hover {
+            display: inline-block;
+            transition: 0.3s ease;
+        }
+
+        .menu li + li {
+            margin-top: 12px;
+        }
+
+        input[type=checkbox]:checked ~ .menu {
+            display: block;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+
+        
+        }
+    </style>
+    
+</head>
+
+
+    <!-- The overlay -->
+    <body>
+        <nav class="navbar">
+      
+          <!-- NAVIGATION MENU -->
+          <ul class="nav-links">
+      
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+      
+              <li><a href="home.html">Home</a></li>
+              <li><a href="software.html">Software</a></li>
+              <li><a href="hardware.html">Hardware</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </div>
+          </ul>
+        </nav>
+      </body>
+<body>
+
+<h2 class="order1">Frequently Asked Questions</h2>
+    
+	<div class="accordion">
+	  <div>
+		<input type="radio" name="example_accordion" id="section1" class="accordion__input">
+		<label for="section1" class="accordion__label">Question #1</label>
+		<div class="accordion__content">
+		  <h4>Question</h4>
+		  <p>
+			What is your process for software development?
+		  </p>
+		  <h4>Answer</h4>
+		  <p>
+			Our software development process consists of several stages, including planning, design, development, testing, and deployment. We use Agile methodology, which allows us to respond quickly to changes and iteration based on feedback.
+		  </p>
+		</div>
+	  </div>
+	  <div>
+		<input type="radio" name="example_accordion" id="section2" class="accordion__input">
+		<label for="section2" class="accordion__label">Question #2</label>
+		<div class="accordion__content">
+		  <h4>Question</h4>
+		  <p>
+			How do you ensure the security of your software?
+		  </p>
+		  <h4>Answer</h4>
+		  <p>
+			We take security seriously, and we use industry-standard practices to ensure our software is secure. We conduct regular code reviews, run vulnerability assessments, and follow secure coding practices.
+		  </p>
+		</div>
+	  </div>
+	  <div>
+		<input type="radio" name="example_accordion" id="section3" class="accordion__input">
+		<label for="section3" class="accordion__label">Question #3</label>
+		<div class="accordion__content">
+		  <h4>Question</h4>
+		  <p>
+			How do you handle software updates and maintenance?
+		  </p>
+		  <h4>Answer</h4>
+		  <p>
+			We have a dedicated team that regularly monitors our software for updates and recommends necessary upgrades. We also provide maintenance services to ensure that our software is always up-to-date and functioning correctly.
+		  </p>
+		</div>
+	  </div>
+	  <div>
+		<input type="radio" name="example_accordion" id="section4" class="accordion__input">
+		<label for="section4" class="accordion__label">Question #4</label>
+		<div class="accordion__content">
+		  <h4>Question</h4>
+		  <p>
+			How do you handle data backups and disaster recovery?
+		  </p>
+		  <h4>Answer</h4>
+		  <p>
+			We have a robust backup and disaster recovery plan in place that includes regular backups of all data. In the event of a disaster, we can restore the data quickly and efficiently to ensure minimal downtime.
+		  </p>
+		</div>
+	  </div>
+	  <div>
+		<input type="radio" name="example_accordion" id="section5" class="accordion__input">
+		<label for="section5" class="accordion__label">Question #5</label>
+		<div class="accordion__content">
+		  <h4>Question</h4>
+		  <p>
+			How do you ensure compatibility with different platforms and devices?
+		  </p>
+		  <h4>Answer</h4>
+		  <p>
+			We test our software on multiple platforms and devices to ensure compatibility. We also follow industry standards and best practices to ensure that our software works seamlessly across a wide range of devices and platforms.
+		  </p>
+		</div>
+	  </div>
+	</div>
+	
+<h2 class="faq">If you can't find the answer to your question above, please speak to one of our staff on our live chat</h2>
+
+</body>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/6472756e74285f0ec46dfeec/1h1fhleae';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script>
+	<!--End of Tawk.to Script-->
+</html>

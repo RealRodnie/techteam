@@ -159,7 +159,7 @@ let TotalAmount = () => {
 
     return (label.innerHTML = `
     <h2>Total Price : £ ${amount}</h2>
-    <a href="checkoutPage"><button class="checkout">Checkout</button></a>
+    <a href="checkoutpage.html"><button class="checkout">Checkout</button></a>
     <button onclick="clearCart()" class="removeAll">Clear Cart</button>
     `);
   } else return;

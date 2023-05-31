@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>TechTeam</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+	<style>
+        body {
+         background-image: url('images/blue.jpg');
+        }
+     
+
+
+     .order {
+        color: #ffffff;
+        text-align: center;
+        margin-top: 20vh;
+        font-size: 3em;
+        text-shadow: 3px 3px black;
+     }
+
+     .order1 {
+        color:#ffffff;
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 2em;
+        text-shadow: 3px 3px black;
+     }
+
+     #demo {
+        color: #ffffff;
+        text-align: center;
+        margin-top: 1vh;
+        font-size: 2em;
+        text-shadow: 3px 3px black;
+     }
+
+   
+
+   
+    .container {
+    height: 200px;
+    position: relative;
+    font-size: 1.25em;
+
+ 
+    }
+
+    .container button {
+        font-size: 1.25em;
+        background-color: #02175c;
+        color: #ffffff;
+    }
+    .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+
+
+
+ </style>
+ 
+ </head>
+ <body>
+ 
+
+	
+
+
+    <!-- Header -->
+	
+	<h1 class="order">Thank you for your order</h1>	
+	<p class="order1">Your Order Number is : </p>
+	<p id="demo"> </p>
+    <div class="container">
+    <div class="center">
+        <a href="home.html"><button>Return Home</button></a>
+    </div>
+    </div>
+
+
+
+
+    <!-- Scripts -->
+<script>
+document.getElementById("demo").innerHTML =
+Math.floor(Math.random() * 50000) + 1;
+</script>
+
+</body>
